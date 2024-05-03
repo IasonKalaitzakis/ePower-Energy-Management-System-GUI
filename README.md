@@ -1,5 +1,20 @@
 The Energy Management System of the Multiport Power Converter (MPC) circuit is controlled through the ePOWER GUI application software. This user’s guide provides instructions on how to use the features of the ePOWER GUI in order to communicate with the optimization and real-time controller modules of the LAUNCHXL-F28379D controller.
 
+Project Links
+
+	https://epower.tuc.gr/objectives/
+	https://epower.tuc.gr/wp-content/uploads/sites/307/2023/09/ePOWER-project.pdf
+
+General Topology
+
+![pic3](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/97ef638b-2340-4482-a32f-809e09482bc4)
+
+![pic11](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/d39a4b0b-484f-4b94-98b5-839e77d895cf)
+
+Lab Setup
+
+![pic8 - Copy](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/12846e43-5904-481a-b4ab-b044f42af6b5)
+
 System Requirements
 
 The following list shows the system requirements for the GUI application to properly run and communicate with the peripherals:
@@ -101,6 +116,8 @@ The user is asked to provide the physical properties of the residence, as well a
 
 Communication
 
+![pic9](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/92508d9d-bdb4-416e-9d69-90f8e12bf94a)
+
 The ePOWER GUI can communicate with the control of the circuit through either serial communication or Wi-Fi.
 
 Serial communication
@@ -119,9 +136,13 @@ The Connect and Disconnect buttons operate with the same principle as above.
 
 Real-time values
 The real-time values are received through whichever communication option is chosen, and are shown in the lower left section of the ePOWER GUI. The power, SoC, voltage and current values are saved in the RealTime_*.txt files every 10 seconds, as long as the GUI is connected to the controller. The real-time values of the ancillary services of the MPC are saved in the .txt file.
+
 ![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/340ad0e6-b0c0-4ec6-a64c-e7b3acf1518c)
+
 ![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/f0ad83e1-688b-49a3-8bc6-97847ef52a33)
+
 ![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/5b4fe9a5-85ec-4ca8-b69f-6d295f15b7df)
+
 ![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/b664b97d-9c60-40eb-9a8c-b891fcb63d7f)
 
 
@@ -163,7 +184,8 @@ The real-time ancillary services and their associated values are:
 Advanced settings
 
 The advanced settings panel can be toggled by selecting the advanced settings checkbox seen below. 
- ![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/9945a0d2-09d8-438a-ba2b-8ebbffefbc74)
+
+![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/9945a0d2-09d8-438a-ba2b-8ebbffefbc74)
 
 The first section of the panel contains two of the basic Particle Swarm Optimization parameters, particles and epochs: 
 
@@ -185,7 +207,9 @@ The support signals are provided through the files “frequency_support.txt” f
 Optimization results, real-time values and ancillary services results are sent to the server by the GUI and saved in “User\Documents\ePOWER\GUI_Output” of the host’s PC. The real-time values of the Electric Vehicle are sent to Electric Vehicle Server Provider (EVSP) and to the Electric Vehicle Transaction Operator (EVTO) as seen in the .txt file. The optimization output and real-time grid power exchange values are sent to the power aggregator as seen below.
 
 ![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/7b02567a-4e3d-4404-966a-664565381025)
+
 ![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/b892c965-03c2-44c7-a932-b0dd838d3761)
+
 ![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/7c571c44-2136-4e86-b5e2-9a0ce9d18b0e)
 
 The real-time values transmitted to the aforementioned entities are the following:
@@ -212,9 +236,13 @@ Real-time values are transferred between the GUI PC and the webserver PC automat
 Once all settings are properly configured, and the GUI is connected to the controller either through serial or Wi-Fi, the user can initiate the optimization by clicking “Run Optimization”. The application first executes the load prediction algorithm, and the PV production prediction algorithm. Afterwards, the GUI transfers the required data to the Wi-Fi card, which is then passed on to the optimization controller.
 
 Once optimization is finished, the results are sent to both the real-time controller and the GUI, the latter of which saves them in files. When the “Plot Optimization” button turns on, that means the optimization results have been received, and the user can choose to plot the results. 
+
 ![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/6b01a6db-7bb3-41fb-8910-5c182baa8c7f)
+
 ![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/00fd8e04-e974-475b-950b-166f033ca531)
+
 ![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/1fc39a1f-2bc5-451a-afbd-6adbce5ccb47)
+
 ![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/8c49cc75-ad6f-407c-99d8-3ebb1e8dd483)
 
  
