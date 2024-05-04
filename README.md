@@ -1,21 +1,21 @@
 The Energy Management System of the Multiport Power Converter (MPC) circuit is controlled through the ePOWER GUI application software. This user’s guide provides instructions on how to use the features of the ePOWER GUI in order to communicate with the optimization and real-time controller modules of the LAUNCHXL-F28379D controller.
 
-Project Links
+## Project Links
 
 	https://epower.tuc.gr/objectives/
 	https://epower.tuc.gr/wp-content/uploads/sites/307/2023/09/ePOWER-project.pdf
 
-General Topology
+## General Topology
 
 ![pic3](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/97ef638b-2340-4482-a32f-809e09482bc4)
 
 ![pic11](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/d39a4b0b-484f-4b94-98b5-839e77d895cf)
 
-Lab Setup
+## Lab Setup
 
 ![pic8 - Copy](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/12846e43-5904-481a-b4ab-b044f42af6b5)
 
-System Requirements
+## System Requirements
 
 The following list shows the system requirements for the GUI application to properly run and communicate with the peripherals:
 
@@ -27,12 +27,12 @@ The following list shows the system requirements for the GUI application to prop
 	USB port (in case of serial communication)
 	Internet Access
  
-Installation
+## Installation
 
 The ePOWER GUI application requires no installation, and is run by executing the .exe file. 
 However, it requires the installation of the aforementioned MATLAB software with the Control System Toolbox and Deep Learning Toolbox.
 
-User Interface Overview
+## User Interface Overview
 
 ![pic2](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/f49d8288-40eb-4b4b-b90b-66d6d4e7ef2a)
 
@@ -43,11 +43,11 @@ Executing the .exe file launches the main optimization window as seen. The ePOWE
 	Real-time values: The feedback values provided by the real-time controller are displayed here, in order to ensure the correct operation of the converter.
 	GUI Status: Current runtime status of the user interface.
  
-Modules and Parameters
+## Modules and Parameters
 
 Each module can be included or excluded, and parametrized accordingly. A more detailed explanation on the parametrization of each module is provided in the following paragraphs.
 
-Electric Vehicle Battery
+### Electric Vehicle Battery
 
 The batteries follow load convention:
 Positive power means power flow from the converter to the battery.
@@ -67,7 +67,7 @@ The electric vehicle additionally supports a commute routine, in which the user 
     EV Departure hour: Departure hour of the scheduled absence of the EV (hours).
     EV Return hour: Return hour of the scheduled absence of the EV (hours).
 
-Battery pack
+### Battery pack
 
 The battery pack module is parametrized similarly to the EV battery:
 
@@ -76,26 +76,26 @@ The battery pack module is parametrized similarly to the EV battery:
     Capacity: Rated capacity of the battery (kWh).
     Converter Efficiency: Efficiency of the converter between requested energy and true energy consumption (0-1).
 
-Load Shifting
+### Load Shifting
 
 The load shifting module is used to define a load shifting percentage of the home load at each time step, allowing up to that percentage of load-shedding/load-addition of kilowatts: 
 
     Load_shifting: Maximum percentage of allowed load shifting (%).
     
-Grid-converter limits
+### Grid-converter limits
 
 The user can define maximum and minimum power flow between the converter and the grid, according to the converter’s limits (load convention applies, same as before):
 
     P_grid_max: Maximum power flow from the grid to the converter (kW).
     P_grid_min: Minimum power flow from the converter to the grid (kW). 
 
-Solar Panels
+### Solar Panels
 
 The solar panel power output prediction that is executed at the start of optimization requires the user to input the rated power of the PV array:
 
     Rated Power: Rated power of the PV array (kW).
 
-Thermodynamic Model
+### Thermodynamic Model
 
 The user is asked to provide the physical properties of the residence, as well as the operational limits of the heating/cooling system:
 
@@ -114,13 +114,13 @@ The user is asked to provide the physical properties of the residence, as well a
     Minimum Heating/Cooling Power: Minimum operational limit of the heating/cooling system (kW).
     COP: Coefficient of Performance, the relationship between the power (kW) that is drawn out of the heat pump as cooling or heat, and the power (kW) that is supplied to the compressor.
 
-Communication
+## Communication
 
 ![pic9](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/92508d9d-bdb4-416e-9d69-90f8e12bf94a)
 
 The ePOWER GUI can communicate with the control of the circuit through either serial communication or Wi-Fi.
 
-Serial communication
+### Serial communication
 
 The serial communication is performed through the Wi-Fi card CC3200-LAUNCHXL, with the user’s PC connected to the card via USB. The GUI requires the specific COM port of the card in order to connect properly. The COM port info can be located and edited in the Device Manager setting of Windows, along with the baud-rate of the device. It is recommended to set the baud-rate (through the device manager) to at least 115200, due to the large amount of information that needs to be passed to the peripherals.
 
@@ -128,13 +128,13 @@ Once the settings are configured, the user can press Connect to establish a conn
 
 It is important to press the Disconnect button once the connection is no longer needed, in order to properly deallocate and delete the connection and file streams.
 
-Wi-Fi communication
+### Wi-Fi communication
 
 The user’s PC requires an Internet connection to connect with the Wi-Fi card over the Internet.  The user is required to input the webserver info (IP and port) of the server established by the Wi-Fi card in order to connect.
 
 The Connect and Disconnect buttons operate with the same principle as above.
 
-Real-time values
+## Real-time values
 The real-time values are received through whichever communication option is chosen, and are shown in the lower left section of the ePOWER GUI. The power, SoC, voltage and current values are saved in the RealTime_*.txt files every 10 seconds, as long as the GUI is connected to the controller. The real-time values of the ancillary services of the MPC are saved in the .txt file.
 
 ![image](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/340ad0e6-b0c0-4ec6-a64c-e7b3acf1518c)
@@ -181,7 +181,7 @@ The real-time ancillary services and their associated values are:
 	ΔL: Reduced load demand after request by the grid operator (W)
 	ΔQ: Change of reactive power to support grid voltage (VAR).
 
-Advanced settings
+## Advanced settings
 
 The advanced settings panel can be toggled by selecting the advanced settings checkbox seen below. 
 
@@ -194,7 +194,7 @@ The first section of the panel contains two of the basic Particle Swarm Optimiza
 	Save folder: The file folder in which all the files associated the optimization and real-time operation are saved (real-time values, optimization inputs and results, etc.).
 	IP of data aggregator: The IP of the data aggregator from which the daily energy cost, environmental temperature, solar irradiance and support signal arrays are pulled, and the optimization results and real-time values are sent, in order to be directed to the proper entities.
 
-Data aggregator server
+## Data aggregator server
 
 Using the python file provided, the user can use a host PC to set up the data aggregator server and communicate with the ePOWER GUI. The server can be on the same PC as the GUI or a different one, as long as the IP and Port of the aforementioned setting are configured correctly. 
 
@@ -231,7 +231,7 @@ The .txt file shown above contains the power Pgrid time series output of optimiz
  
 Real-time values are transferred between the GUI PC and the webserver PC automatically every 30 minutes. The optimization related data is transferred each time the optimization is executed, which is by default every 24 hours.
 
-‘Run optimization’ button 
+## ‘Run optimization’ button 
 
 Once all settings are properly configured, and the GUI is connected to the controller either through serial or Wi-Fi, the user can initiate the optimization by clicking “Run Optimization”. The application first executes the load prediction algorithm, and the PV production prediction algorithm. Afterwards, the GUI transfers the required data to the Wi-Fi card, which is then passed on to the optimization controller.
 
