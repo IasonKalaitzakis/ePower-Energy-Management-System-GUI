@@ -3,7 +3,6 @@ The Energy Management System of the Multiport Power Converter (MPC) circuit is c
 ## Project Links
 
 	https://epower.tuc.gr/objectives/
- 
 	https://epower.tuc.gr/wp-content/uploads/sites/307/2023/09/ePOWER-project.pdf
 
 ## General Topology
