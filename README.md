@@ -11,7 +11,7 @@ The Energy Management System of the Multiport Power Converter (MPC) circuit is c
 
 ![pic11](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/d39a4b0b-484f-4b94-98b5-839e77d895cf)
 
-## Lab Setup
+## Lab Setup (Low Voltage Prototype)
 
 ![pic8 - Copy](https://github.com/IasonKalaitzakis/ePower-Optimal-Power-Management-Graphical-User-Interface/assets/31860283/12846e43-5904-481a-b4ab-b044f42af6b5)
 
